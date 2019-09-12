@@ -1,0 +1,2 @@
+# Encata-Soft
+angular app
