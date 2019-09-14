@@ -1,0 +1,49 @@
+<mat-card>
+  <mat-card-title>Rregistration</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="registrationForm" (ngSubmit)="submit()">
+      <p>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Username" formControlName="userName">
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input type="password" matInput placeholder="Password" formControlName="userPassword" [type]="hide.password ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide.password = !hide.password" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide.password">
+            <mat-icon>{{hide.password ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input type="password" matInput placeholder="Confirm Password" formControlName="confirmPassword" [type]="hide.confirm ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide.confirm = !hide.confirm" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide.confirm">
+            <mat-icon>{{hide.confirm ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Email/Phone" formControlName="emailPhone">
+        </mat-form-field>
+      </p>
+
+      <p *ngIf="registrationForm.getError('mismatchedPasswords') && this.registrationForm.controls['confirmPassword'].touched" class="error">
+        Passwords not match
+      </p>
+
+      <p *ngIf="error" class="error">
+        Request not sent
+      </p>
+
+      <div class="button">
+        <button type="submit" mat-button>Register</button>
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>
