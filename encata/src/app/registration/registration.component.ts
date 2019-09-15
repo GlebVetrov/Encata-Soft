@@ -24,7 +24,7 @@ export class RegistrationComponent implements OnInit {
 
   constructor(private userService: UserService) {}
 
-  submit() {
+  submit(): void {
     if (this.registrationForm.valid) {
       this.userService.setUser(this.registrationForm.value)
         .subscribe(data => console.log(data.ok),
@@ -52,7 +52,7 @@ export class RegistrationComponent implements OnInit {
     return newPassword.value === confirmPassword.value ? null : { mismatchedPasswords: true };
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.registrationForm = new FormGroup({
       userName: new FormControl('', [Validators.required]),
       userPassword: new FormControl('', [Validators.required]),

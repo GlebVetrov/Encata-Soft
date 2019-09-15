@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private userService: UserService) { }
 
-  submit() {
+  submit(): void {
     if (this.loginForm.valid) {
       this.userService.getUser(this.loginForm.value)
         .subscribe(data => data.ok,
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.loginForm = new FormGroup({
       userName: new FormControl('', [Validators.required]),
       userPassword: new FormControl('', [Validators.required])

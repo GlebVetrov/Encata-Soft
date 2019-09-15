@@ -12,7 +12,6 @@ export class ParentComponent {
   number = 0;
   picture = 'https://material.angular.io/assets/img/examples/shiba2.jpg';
 
-
   changeNumber(inc: boolean): void {
    inc ? this.number += 1 :  this.number -= 1;
   }

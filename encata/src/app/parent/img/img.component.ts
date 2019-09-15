@@ -14,7 +14,7 @@ export class ImgComponent {
   @Output()
   changed = new EventEmitter<string>();
 
-  onChange() {
+  onChange(): void {
     this.changed.emit();
   }
 }
