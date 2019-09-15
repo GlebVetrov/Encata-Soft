@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <mat-card class="main">
+    <app-input [(name)]="name"></app-input>
+    <p>Name: {{name}}</p>
+    <br>
+    <app-counter (changed)="changeNumber($event)" [number]="number"></app-counter>
+    <br>
+    <app-img (changed)="changePicture()" [url]="picture"></app-img>
+  </mat-card>
+</div>
