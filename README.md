@@ -1,2 +1,2 @@
 # Encata-Soft
-angular app
+Test angular app.

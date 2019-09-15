@@ -5,6 +5,7 @@ import { MaterialModule } from '../material-module';
 import {FormsModule} from '@angular/forms';
 import { CounterComponent } from './counter/counter.component';
 import { ImgComponent } from './img/img.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,10 @@ import { ImgComponent } from './img/img.component';
   ],
   imports: [
     MaterialModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forChild([
+      {path: '', component: ParentComponent}
+    ])
   ],
   exports: [
     ParentComponent

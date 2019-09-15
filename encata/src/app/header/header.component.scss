@@ -1,7 +1,15 @@
 .wrapper {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  .active {
-    background-color: darkslateblue;
+  align-items: center;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+
+    .active {
+      background-color: darkslateblue;
+    }
   }
 }

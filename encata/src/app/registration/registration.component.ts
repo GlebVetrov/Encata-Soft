@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../user.service';
 
@@ -10,7 +10,8 @@ interface Hide {
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.scss']
+  styleUrls: ['./registration.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RegistrationComponent implements OnInit {
 
@@ -36,7 +37,6 @@ export class RegistrationComponent implements OnInit {
   emailPhoneValidator(control: FormControl): {[s: string]: boolean} {
     const regEmail =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/gmi;
     const regPhone = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g;
-    console.log(control);
     if (regEmail.test(control.value) || regPhone.test(control.value)) {
       return null;
     }

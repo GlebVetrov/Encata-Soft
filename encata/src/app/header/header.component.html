@@ -1,12 +1,18 @@
-<mat-toolbar class="wrapper" color="primary">
-  <app-menu></app-menu>
-  <div>
-    <button mat-button class="nav-button" routerLink="/login" routerLinkActive="active">
-      Login
-    </button>
-    <button mat-button class="nav-button" routerLink="/registration" routerLinkActive="active">
-      Registration
-    </button>
-  </div>
+<mat-toolbar color="primary">
+  <nav class="wrapper">
+    <app-menu></app-menu>
+    <ul>
+      <li>
+        <button mat-button class="nav-button" routerLink="/login" routerLinkActive="active">
+          Login
+        </button>
+      </li>
+      <li>
+        <button mat-button class="nav-button" routerLink="/registration" routerLinkActive="active">
+          Registration
+        </button>
+      </li>
+    </ul>
+  </nav>
 </mat-toolbar>
 <router-outlet></router-outlet>
